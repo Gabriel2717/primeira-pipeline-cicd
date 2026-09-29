@@ -1,4 +1,4 @@
-run-name: CI-CD
+name: CI-CD
 on:
   push: 
     branches: ["main"]
@@ -18,7 +18,7 @@ jobs:
         uses: docker/build-push-action@v5.3.0
         with:
           context: ./src
-          file: .src/Dockerfile
+          file: ./src/Dockerfile
           push: true
           tags: |
             gabriel2912/aula-primeira-pipeline:v${{ github.run_number }}
